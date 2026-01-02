@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Govt Schemes | Islam Computers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+        
+        :root { --blue: #003366; --green: #008000; --gold: #d4a017; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { background: #f0f4f8; direction: rtl; text-align: right; font-family: 'Noto Nastaliq Urdu', serif; }
+
+        /* Floating Channel Link */
+        .floating-channel {
+            position: fixed;
+            top: 70px;
+            left: 20px;
+            background: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-weight: bold;
+            z-index: 2000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        /* Header with Logo */
+        .top-brand {
+            background: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--blue);
+        }
+        .brand-name { display: flex; align-items: center; gap: 15px; font-family: sans-serif; font-weight: 900; font-size: 24px; color: var(--blue); }
+        .brand-name img { height: 60px; border-radius: 50%; border: 2px solid var(--green); }
+
+        .header-main { background: linear-gradient(to left, var(--blue), var(--green)); color: white; padding: 40px 5%; text-align: center; }
+        .header-main h1 { font-size: 30px; text-decoration: underline; margin-bottom: 10px; }
+
+        .container { padding: 30px 5%; max-width: 1000px; margin: auto; }
+
+        /* Collapsible Scheme Card */
+        .scheme-wrapper { background: white; border-radius: 15px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-right: 8px solid var(--blue); }
+        
+        .scheme-header {
+            padding: 20px;
+            background: #fff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+        }
+        .scheme-header:hover { background: #f9f9f9; }
+        .scheme-header h2 { font-size: 24px; color: var(--blue); }
+        .arrow { font-size: 20px; transition: 0.4s; color: var(--gold); }
+
+        .scheme-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            padding: 0 20px;
+            background: #fff;
+        }
+
+        /* Checkbox Hack for Toggle */
+        .scheme-toggle { display: none; }
+        .scheme-toggle:checked ~ .scheme-content { max-height: 2500px; padding: 20px; border-top: 1px solid #eee; }
+        .scheme-toggle:checked ~ .scheme-header .arrow { transform: rotate(90deg); }
+
+        /* Document List Styling */
+        .doc-list { background: #eef2f7; padding: 20px; border-radius: 10px; margin: 15px 0; border-left: 4px solid var(--blue); }
+        
+        /* Apply Section */
+        .apply-box {
+            background: var(--green);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .apply-btn {
+            display: inline-block;
+            background: white;
+            color: var(--green);
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            font-family: sans-serif;
+        }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+        th { background: var(--blue); color: white; }
+
+        footer { background: #1a1a1a; color: white; text-align: center; padding: 30px; margin-top: 50px; font-family: sans-serif; }
+    </style>
+</head>
+<body>
+
+<a href="https://whatsapp.com/channel/YOUR_LINK_HERE" class="floating-channel">
+    <i class="fab fa-whatsapp"></i> Join Channel
+</a>
+
+<div class="top-brand">
+    <div class="brand-name">
+        <img src="shop-logo.png" alt="Logo">
+        ISLAM COMPUTERS
+    </div>
+    <div style="font-family: sans-serif; font-weight: bold; color: #666;">
+        Arif Bazar, Burewala
+    </div>
+</div>
+
+<div class="header-main">
+    <img src="punjab-logo.png" alt="Govt Logo" style="height: 80px; margin-bottom: 10px;">
+    <h1>حکومتی اسکیمز - مکمل معلومات</h1>
+    <p>تفصیلات دیکھنے کے لیے اسکیم کے نام پر یا تیر (Arrow) پر کلک کریں</p>
+</div>
+
+<div class="container">
+
+    <div class="scheme-wrapper">
+        <input type="checkbox" id="scheme1" class="scheme-toggle">
+        <label for="scheme1" class="scheme-header">
+            <h2>1. وزیراعظم یوتھ بزنس لون اسکیم</h2>
+            <i class="fas fa-chevron-left arrow"></i>
+        </label>
+        <div class="scheme-content">
+            <img src="pmyp-ad.jpg" alt="Ad" style="width:100%; border-radius:10px; margin-bottom:15px;">
+            <p><b>مقصد:</b> نوجوانوں کو 1 لاکھ سے 75 لاکھ تک بلاسود اور کم سود پر قرضہ فراہم کرنا۔</p>
+            <h3>قرض کے درجات:</h3>
+            <table>
+                <tr><th>درجہ</th><th>رقم</th><th>سود</th></tr>
+                <tr><td>درجہ 1</td><td>1 تا 5 لاکھ</td><td>0%</td></tr>
+                <tr><td>درجہ 2</td><td>5 تا 15 لاکھ</td><td>5%</td></tr>
+                <tr><td>درجہ 3</td><td>15 تا 75 لاکھ</td><td>7%</td></tr>
+            </table>
+            <div class="doc-list">
+                <p><b>درکار کاغذات:</b> پاسپورٹ سائز تصویر، شناختی کارڈ کاپی، بزنس پلان، موبائل نمبر۔</p>
+            </div>
+            <div class="apply-box">
+                <p>آن لائن اپلائی کے لیے اسلام کمپیوٹرز پر تشریف لائیں</p>
+                <p>رابطہ: 0332-7477945 | 0302-7966287</p>
+                <a href="https://wa.me/923327477945" class="apply-btn">رابطہ بذریعہ واٹس ایپ</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="scheme-wrapper" style="border-right-color: var(--green);">
+        <input type="checkbox" id="scheme2" class="scheme-toggle">
+        <label for="scheme2" class="scheme-header">
+            <h2>2. پنجاب دھی رانی پروگرام (اجتماعی شادیاں)</h2>
+            <i class="fas fa-chevron-left arrow"></i>
+        </label>
+        <div class="scheme-content">
+            <img src="dhee-rani-ad.jpg" alt="Ad" style="width:100%; border-radius:10px; margin-bottom:15px;">
+            <p><b>امداد:</b> 1 لاکھ روپے سلامی + 2 لاکھ مالیت کا جہیز (فرنیچر، ڈنر سیٹ وغیرہ)۔</p>
+            <div class="doc-list">
+                <p><b>اہلیت:</b> عمر 18-40 سال، پنجاب کا ڈومیسائل، یتیم یا مستحق لڑکیاں۔</p>
+            </div>
+            <div class="apply-box" style="background: var(--blue);">
+                <p>فارم کی درست بھرتی کے لیے ہم سے رابطہ کریں</p>
+                <a href="https://wa.me/923327477945" class="apply-btn" style="color:var(--blue)">Apply via Islam Computers</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="scheme-wrapper">
+        <input type="checkbox" id="scheme3" class="scheme-toggle">
+        <label for="scheme3" class="scheme-header">
+            <h2>3. اپنی چھت اپنا گھر اسکیم</h2>
+            <i class="fas fa-chevron-left arrow"></i>
+        </label>
+        <div class="scheme-content">
+            <img src="house-scheme-ad.jpg" alt="Ad" style="width:100%; border-radius:10px; margin-bottom:15px;">
+            <p><b>قرضہ:</b> 15 لاکھ روپے تک گھر بنانے کے لیے قرضہ۔ ماہانہ قسط 26,000 روپے۔</p>
+            <div class="doc-list">
+                <p><b>شرائط:</b> اپنا پلاٹ ہونا ضروری ہے (شہری 5 مرلہ، دیہی 10 مرلہ)۔</p>
+            </div>
+            <div class="apply-box">
+                <p>رجسٹریشن کے لیے اسلام کمپیوٹرز بورے والا تشریف لائیں</p>
+                <a href="https://wa.me/923327477945" class="apply-btn">مزید معلومات حاصل کریں</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div style="text-align: center; padding: 20px;">
+    <a href="https://whatsapp.com/channel/YOUR_LINK_HERE" style="color: var(--green); font-weight: bold; text-decoration: none; font-family: sans-serif;">
+        <i class="fab fa-whatsapp"></i> JOIN OUR OFFICIAL WHATSAPP CHANNEL
+    </a>
+</div>
+
+<footer>
+    <p>ISLAM COMPUTERS - Arif Bazar, Burewala</p>
+    <p>Designed by Ali Zain | © 2026 All Rights Reserved</p>
+</footer>
+
+<script>
+    // Optional: Smoothly close others when one opens
+    const checks = document.querySelectorAll('.scheme-toggle');
+    checks.forEach(check => {
+        check.addEventListener('change', function() {
+            if(this.checked) {
+                checks.forEach(c => { if(c !== this) c.checked = false; });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
