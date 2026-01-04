@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal - Islam Computers</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding-top: 60px; padding-bottom: 50px; overflow: hidden; }
+        header { position: fixed; top: 0; width: 100%; background: #28a745; color: white; padding: 15px 0; text-align: center; font-size: 22px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; }
+        footer { position: fixed; bottom: 0; width: 100%; background: #333; color: white; padding: 10px 0; text-align: center; font-size: 14px; z-index: 1000; }
+        .main-container { display: flex; height: calc(100vh - 110px); }
+        .sidebar { width: 20%; background: #fff; border-right: 1px solid #ddd; overflow-y: auto; padding: 10px; }
+        .job-box { background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 6px; padding: 12px; margin-bottom: 10px; cursor: pointer; position: relative; transition: 0.3s; }
+        .job-box:hover { background: #e8f5e9; border-color: #28a745; }
+        .job-box.active { border-left: 5px solid #28a745; background: #e8f5e9; }
+        .job-box h4 { margin: 0 0 5px 0; font-size: 14px; color: #111; }
+        .job-box p { margin: 2px 0; font-size: 11px; color: #666; }
+        .job-box .date { color: #d9534f; font-weight: bold; }
+        .job-box .arrow { position: absolute; right: 8px; top: 40%; color: #28a745; font-size: 16px; }
+        .content-area { width: 80%; overflow-y: auto; padding: 20px; background: white; }
+        .wrapper { max-width: 800px; margin: auto; }
+        h1 { font-size: 24px; color: #111; font-weight: bold; }
+        .meta-info { font-size: 13px; color: #777; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .social-share { display: flex; gap: 10px; margin-bottom: 20px; }
+        .social-btn { padding: 8px 15px; border-radius: 4px; color: white; text-decoration: none; font-size: 14px; font-weight: bold; }
+        .fb { background: #3b5998; } .wa { background: #25d366; } .tt { background: #000; }
+        .points-table { width: 100%; border-collapse: collapse; margin-top: 20px; border: 1px solid #28a745; }
+        .table-header { background-color: #28a745; color: white; text-align: center; padding: 12px; font-size: 18px; font-weight: bold; }
+        .points-table td { padding: 10px; border: 1px solid #eee; font-size: 15px; }
+        .label { font-weight: bold; width: 35%; background: #fdfdfd; }
+        .last-date-row { background-color: #fff3cd !important; color: #856404; font-weight: bold; }
+        .section-heading { color: #111; font-size: 20px; margin-top: 25px; border-left: 5px solid #28a745; padding-left: 10px; font-weight: bold; }
+        .ad-image-container { text-align: center; margin-top: 20px; }
+        .ad-image-container img { max-width: 100%; border-radius: 5px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+
+<header>ISLAM COMPUTERS - JOBS PORTAL</header>
+
+<div class="main-container">
+    <div class="sidebar">
+        <h3 style="border-bottom: 2px solid #28a745; padding-bottom: 5px; font-size: 16px;">Current Jobs</h3>
+        
+        <div class="job-box active" onclick="showJob('pera')">
+            <h4>Sergeant Driver</h4>
+            <p>Dept: P.E.R.A Force</p>
+            <p class="date">Last Date: 15-01-2026</p>
+            <span class="arrow">➤</span>
+        </div>
+
+	<div class="job-box" onclick="showJob('meezan')">
+            <h4>BSO (Cashier)</h4>
+            <p>Dept: Meezan Bank</p>
+            <p class="date">Last Date: 15-01-2026</p>
+            <span class="arrow">➤</span>
+        </div>
+
+        <div class="job-box" onclick="showJob('special')">
+            <h4>Different Post (300+)</h4>
+            <p>Dept: Special Education</p>
+            <p class="date">Last Date: 05-01-2026</p>
+            <span class="arrow">➤</span>
+        </div>
+	
+        
+    </div>
+
+    <div class="content-area" id="job-details">
+        </div>
+</div>
+
+<footer>&copy; 2026 Islam Computers. All Rights Reserved.</footer>
+
+<script>
+const jobsData = {
+    pera: `
+        <div class="wrapper">
+            <h1>Sergeant Driver – Apply 2026</h1>
+            <h2>Department: Punjab Enforcement & Regulatory Authority (P.E.R.A)</h2>
+            <div class="meta-info">Published by: Islam Computers</div>
+            <div class="social-share">
+                <a href="#" class="social-btn fb">Facebook</a>
+                <a href="https://whatsapp.com/channel/0029VaOBISN8kyyUVXYlbo3R" class="social-btn wa">WhatsApp</a>
+                <a href="#" class="social-btn tt">TikTok</a>
+            </div>
+            <table class="points-table">
+                <tr><th colspan="2" class="table-header">Important Points</th></tr>
+                <tr><td class="label">Post Name</td><td>Sergeant Driver (Scale-07)</td></tr>
+		<tr><td class="label">Department</td><td>PERA Force</td></tr>
+                <tr><td class="label">Domicile</td><td>Punjab</td></tr>
+		<tr><td class="label">Age Limit</td><td>18-26</td></tr>
+                <tr><td class="label">Education</td><td>F.A or equivalent with LTV/Car License</td></tr>
+		<tr><td class="label">Gender</td><td>Male/Female</td></tr>
+                <tr><td class="label">Physical (Male)</td><td>Height: 5'6", Chest: 32-34</td></tr>
+                <tr><td class="label">Physical (Female)</td><td>Height: 5'3"</td></tr>
+                <tr><td class="label">Govt. Fees</td><td>450/-</td></tr>
+                <tr class="last-date-row"><td class="label">Last Date to Apply</td><td>15-01-2026</td></tr>
+            </table>
+            <div class="section-heading">Eligibility Criteria</div>
+            <ul>
+                <li><strong>Age:</strong> 18 to 26 years.</li>
+                <li><strong>Running:</strong> 1.6 KM in 7 mins (Male), 1.6 KM in 11 mins (Female).</li>
+		 <li><strong>Experience</strong> Not Required </li>
+            </ul>
+            <div class="section-heading">Advertisement</div>
+            <div class="ad-image-container"><img src="pera_ad.jpg" alt="PERA Ad"></div>
+        </div>`,
+    
+   special: `
+        <div class="wrapper">
+            <h1>300+ New Vacancies in Punjab</h1>
+            <h2>Department: Special Education Department</h2>
+            <div class="meta-info">Published by: Islam Computers</div>
+            <div class="social-share">
+                <a href="#" class="social-btn fb">Facebook</a>
+                <a href="https://whatsapp.com/channel/0029VaOBISN8kyyUVXYlbo3R" class="social-btn wa">WhatsApp</a>
+                <a href="#" class="social-btn tt">TikTok</a>
+            </div>
+            <table class="points-table">
+                <tr><th colspan="3" class="table-header">Available Positions (Click for Details)</th></tr>
+                
+                <tr onclick="toggleDetails('attendant')" style="cursor:pointer;">
+                    <td class="label">School Attendant</td>
+                    <td>Education: Matric | Age: 25-35</td>
+                    <td style="color:#28a745; text-align:center;">➤</td>
+                </tr>
+                <tr id="attendant" style="display:none; background:#f9f9f9;">
+                    <td colspan="3" style="padding:10px; font-size:13px; border-left:3px solid #28a745;">
+                        <strong>More Details:</strong> Relevant experience in school management preferred. Duty in Special Education centers.
+                    </td>
+                </tr>
+
+                <tr onclick="toggleDetails('driver')" style="cursor:pointer;">
+                    <td class="label">Driver</td>
+                    <td>Education: Matric | Age: 25-40</td>
+                    <td style="color:#28a745; text-align:center;">➤</td>
+                </tr>
+                <tr id="driver" style="display:none; background:#f9f9f9;">
+                    <td colspan="3" style="padding:10px; font-size:13px; border-left:3px solid #28a745;">
+                        <strong>More Details:</strong> Valid LTV/HTV license required with 5 years of driving experience.
+                    </td>
+                </tr>
+
+                <tr onclick="toggleDetails('cook')" style="cursor:pointer;">
+                    <td class="label">Cook</td>
+                    <td>Education: Matric | Age: 25-35</td>
+                    <td style="color:#28a745; text-align:center;">➤</td>
+                </tr>
+                <tr id="cook" style="display:none; background:#f9f9f9;">
+                    <td colspan="3" style="padding:10px; font-size:13px; border-left:3px solid #28a745;">
+                        <strong>More Details:</strong> Expert in cooking local dishes. Hygiene certificate will be a plus.
+                    </td>
+                </tr>
+
+                <tr onclick="toggleDetails('conductor')" style="cursor:pointer;">
+                    <td class="label">Conductor</td>
+                    <td>Education: Intermediate | Age: 25-35</td>
+                    <td style="color:#28a745; text-align:center;">➤</td>
+                </tr>
+                <tr id="conductor" style="display:none; background:#f9f9f9;">
+                    <td colspan="3" style="padding:10px; font-size:13px; border-left:3px solid #28a745;">
+                        <strong>More Details:</strong> Good communication skills and ability to manage students during travel.
+                    </td>
+                </tr>
+
+                <tr onclick="toggleDetails('guard')" style="cursor:pointer;">
+                    <td class="label">Security Guard</td>
+                    <td>Education: Matric | Age: 30-45</td>
+                    <td style="color:#28a745; text-align:center;">➤</td>
+                </tr>
+                <tr id="guard" style="display:none; background:#f9f9f9;">
+                    <td colspan="3" style="padding:10px; font-size:13px; border-left:3px solid #28a745;">
+                        <strong>More Details:</strong> Preference will be given to retired army personnel.
+                    </td>
+                </tr>
+
+                <tr class="last-date-row"><td class="label">Last Date to Apply</td><td colspan="2">05-01-2026</td></tr>
+            </table>
+            <div class="section-heading">Details</div>
+            <p>More than 300 vacancies have been announced for both males and females in the Special Education Department, Punjab.</p>
+            <div class="section-heading">Advertisement</div>
+            <div class="ad-image-container"><img src="Special Education AD.jpeg" alt="Special Education Ad"></div>
+        </div>`,
+
+
+    meezan: `
+        <div class="wrapper">
+            <h1>Branch Services Officer (Cashier) – Batch 21</h1>
+            <h2>Department: Meezan Bank</h2>
+            <div class="meta-info">Published by: Islam Computers</div>
+            <div class="social-share">
+                <a href="#" class="social-btn fb">Facebook</a>
+                <a href="https://whatsapp.com/channel/0029VaOBISN8kyyUVXYlbo3R" class="social-btn wa">WhatsApp</a>
+                <a href="#" class="social-btn tt">TikTok</a>
+            </div>
+            <table class="points-table">
+                <tr><th colspan="2" class="table-header">Important Points</th></tr>
+                <tr><td class="label">Post Name</td><td>Branch Service Officer</td></tr>
+		<tr><td class="label">Department</td><td>Meezan Bank</td></tr>
+                <tr><td class="label">Domicile</td><td>Overall Pakistan</td></tr>
+		<tr><td class="label">Age Limit</td><td>Less than 26 (Till 31-12-2025)</td></tr>
+                <tr><td class="label">Education</td><td>Graduation</td></tr>
+		<tr><td class="label">Gender</td><td>Male/Female</td></tr>
+                <tr class="last-date-row"><td class="label">Last Date to Apply</td><td>15-01-2026</td></tr>
+            </table>
+            <div class="section-heading">Eligibility Criteria</div>
+            <ul>
+                <li>Fresh graduates are encouraged to apply.</li>
+                <li>Qualification in Islamic Finance will be an advantage.</li>
+		<li><strong>Experience</strong> Not Required </li>
+            </ul>
+            <div class="section-heading">Advertisement</div>
+            <div class="ad-image-container"><img src="Meezan Ad.jpg" alt="Meezan Bank Ad"></div>
+        </div>`
+
+
+};
+
+function showJob(jobId) {
+    document.getElementById('job-details').innerHTML = jobsData[jobId];
+    document.querySelectorAll('.job-box').forEach(box => box.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+}
+function toggleDetails(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "table-row";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+// Load first job by default
+window.onload = () => showJob('pera');
+</script>
+
+</body>
+</html>
